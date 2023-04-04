@@ -1,0 +1,15 @@
+// COMPILE THE GRAMMAR AND ITS JAVA FILES
+antlr4-build -java GRAMMARNAME
+
+
+// Test the grammar and make a tree
+antlr4-test GRAMMARNAME TREE_ROOT -gui -tokens
+
+// Create a visitor
+antlr4-visitor GRAMMARNAME Execute Type
+
+// Create the class main to run
+antlr4-main
+
+//Run the main
+antlr4-run

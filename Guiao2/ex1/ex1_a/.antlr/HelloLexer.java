@@ -1,4 +1,4 @@
-// Generated from /home/filipe/Documentos/GitHub/COMPILADORES/Guiao2/ex1/Hello.g4 by ANTLR 4.9.2
+// Generated from /home/filipe/Documentos/GitHub/COMPILADORES/Guiao2/ex1/ex1_a/Hello.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

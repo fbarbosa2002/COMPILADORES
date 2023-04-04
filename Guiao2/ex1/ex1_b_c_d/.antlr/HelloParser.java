@@ -1,4 +1,4 @@
-// Generated from /home/filipe/Documentos/GitHub/COMPILADORES/Guiao2/ex1/Hello.g4 by ANTLR 4.9.2
+// Generated from /home/filipe/Documentos/GitHub/COMPILADORES/Guiao2/ex1/ex1_b_c_d/Hello.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -16,7 +16,7 @@ public class HelloParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, ID=2, WS=3;
+		T__0=1, T__1=2, ID=3, WS=4;
 	public static final int
 		RULE_greetings = 0;
 	private static String[] makeRuleNames() {
@@ -28,13 +28,13 @@ public class HelloParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'hello'"
+			null, "'hello'", "'bye'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, "ID", "WS"
+			null, null, null, "ID", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -89,7 +89,10 @@ public class HelloParser extends Parser {
 	}
 
 	public static class GreetingsContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(HelloParser.ID, 0); }
+		public List<TerminalNode> ID() { return getTokens(HelloParser.ID); }
+		public TerminalNode ID(int i) {
+			return getToken(HelloParser.ID, i);
+		}
 		public GreetingsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -99,13 +102,34 @@ public class HelloParser extends Parser {
 	public final GreetingsContext greetings() throws RecognitionException {
 		GreetingsContext _localctx = new GreetingsContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_greetings);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(2);
-			match(T__0);
-			setState(3);
-			match(ID);
+			_la = _input.LA(1);
+			if ( !(_la==T__0 || _la==T__1) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			setState(4); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(3);
+				match(ID);
+				}
+				}
+				setState(6); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==ID );
 			}
 		}
 		catch (RecognitionException re) {
@@ -120,9 +144,10 @@ public class HelloParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\5\b\4\2\t\2\3\2\3"+
-		"\2\3\2\3\2\2\2\3\2\2\2\2\6\2\4\3\2\2\2\4\5\7\3\2\2\5\6\7\4\2\2\6\3\3\2"+
-		"\2\2\2";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\6\13\4\2\t\2\3\2"+
+		"\3\2\6\2\7\n\2\r\2\16\2\b\3\2\2\2\3\2\2\3\3\2\3\4\2\n\2\4\3\2\2\2\4\6"+
+		"\t\2\2\2\5\7\7\5\2\2\6\5\3\2\2\2\7\b\3\2\2\2\b\6\3\2\2\2\b\t\3\2\2\2\t"+
+		"\3\3\2\2\2\3\b";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
