@@ -91,7 +91,7 @@ public class VInterpeter extends CalcFracBaseVisitor<Fraction> {
       Fraction two = visit(ctx.expr(1));
       switch(ctx.op.getText()){
          case "*": return one.multiply(two);
-         case "/": return one.divide(two);
+         case ":": return one.divide(two);
       }
       return null;
    }

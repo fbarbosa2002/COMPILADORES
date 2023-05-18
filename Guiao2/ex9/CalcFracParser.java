@@ -17,7 +17,7 @@ public class CalcFracParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, Number=12, ID=13, Text=14, NEWLINE=15, WS=16;
+		T__9=10, T__10=11, T__11=12, Number=13, ID=14, Text=15, NEWLINE=16, WS=17;
 	public static final int
 		RULE_program = 0, RULE_stat = 1, RULE_print = 2, RULE_assignment = 3, 
 		RULE_expr = 4;
@@ -30,15 +30,15 @@ public class CalcFracParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'print'", "';'", "'->'", "'reduce'", "'read'", "'*'", "'/'", "'+'", 
-			"'-'", "'('", "')'"
+			null, "'print'", "';'", "'->'", "'reduce'", "'read'", "'*'", "':'", "'+'", 
+			"'-'", "'('", "')'", "'/'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			"Number", "ID", "Text", "NEWLINE", "WS"
+			null, "Number", "ID", "Text", "NEWLINE", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -130,7 +130,7 @@ public class CalcFracParser extends Parser {
 			setState(13);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 46130L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 91186L) != 0)) {
 				{
 				{
 				setState(10);
@@ -621,7 +621,7 @@ public class CalcFracParser extends Parser {
 				setState(44);
 				match(Number);
 				setState(45);
-				match(T__6);
+				match(T__11);
 				setState(46);
 				match(Number);
 				}
@@ -737,7 +737,7 @@ public class CalcFracParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0010?\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u0011?\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0001"+
 		"\u0000\u0005\u0000\f\b\u0000\n\u0000\f\u0000\u000f\t\u0000\u0001\u0000"+
 		"\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
@@ -756,27 +756,27 @@ public class CalcFracParser extends Parser {
 		"\r\u000e\u0001\u0000\u0000\u0000\u000e\u0010\u0001\u0000\u0000\u0000\u000f"+
 		"\r\u0001\u0000\u0000\u0000\u0010\u0011\u0005\u0000\u0000\u0001\u0011\u0001"+
 		"\u0001\u0000\u0000\u0000\u0012\u0013\u0003\u0004\u0002\u0000\u0013\u0014"+
-		"\u0005\u000f\u0000\u0000\u0014\u001a\u0001\u0000\u0000\u0000\u0015\u0016"+
-		"\u0003\u0006\u0003\u0000\u0016\u0017\u0005\u000f\u0000\u0000\u0017\u001a"+
-		"\u0001\u0000\u0000\u0000\u0018\u001a\u0005\u000f\u0000\u0000\u0019\u0012"+
+		"\u0005\u0010\u0000\u0000\u0014\u001a\u0001\u0000\u0000\u0000\u0015\u0016"+
+		"\u0003\u0006\u0003\u0000\u0016\u0017\u0005\u0010\u0000\u0000\u0017\u001a"+
+		"\u0001\u0000\u0000\u0000\u0018\u001a\u0005\u0010\u0000\u0000\u0019\u0012"+
 		"\u0001\u0000\u0000\u0000\u0019\u0015\u0001\u0000\u0000\u0000\u0019\u0018"+
 		"\u0001\u0000\u0000\u0000\u001a\u0003\u0001\u0000\u0000\u0000\u001b\u001c"+
 		"\u0005\u0001\u0000\u0000\u001c\u001d\u0003\b\u0004\u0000\u001d\u001e\u0005"+
 		"\u0002\u0000\u0000\u001e\u0005\u0001\u0000\u0000\u0000\u001f \u0003\b"+
-		"\u0004\u0000 !\u0005\u0003\u0000\u0000!\"\u0005\r\u0000\u0000\"\u0007"+
+		"\u0004\u0000 !\u0005\u0003\u0000\u0000!\"\u0005\u000e\u0000\u0000\"\u0007"+
 		"\u0001\u0000\u0000\u0000#$\u0006\u0004\uffff\uffff\u0000$%\u0005\u0004"+
-		"\u0000\u0000%2\u0003\b\u0004\b&\'\u0005\u0005\u0000\u0000\'2\u0005\u000e"+
+		"\u0000\u0000%2\u0003\b\u0004\b&\'\u0005\u0005\u0000\u0000\'2\u0005\u000f"+
 		"\u0000\u0000()\u0005\n\u0000\u0000)*\u0003\b\u0004\u0000*+\u0005\u000b"+
-		"\u0000\u0000+2\u0001\u0000\u0000\u0000,-\u0005\f\u0000\u0000-.\u0005\u0007"+
-		"\u0000\u0000.2\u0005\f\u0000\u0000/2\u0005\f\u0000\u000002\u0005\r\u0000"+
-		"\u00001#\u0001\u0000\u0000\u00001&\u0001\u0000\u0000\u00001(\u0001\u0000"+
-		"\u0000\u00001,\u0001\u0000\u0000\u00001/\u0001\u0000\u0000\u000010\u0001"+
-		"\u0000\u0000\u00002;\u0001\u0000\u0000\u000034\n\u0006\u0000\u000045\u0007"+
-		"\u0000\u0000\u00005:\u0003\b\u0004\u000767\n\u0005\u0000\u000078\u0007"+
-		"\u0001\u0000\u00008:\u0003\b\u0004\u000693\u0001\u0000\u0000\u000096\u0001"+
-		"\u0000\u0000\u0000:=\u0001\u0000\u0000\u0000;9\u0001\u0000\u0000\u0000"+
-		";<\u0001\u0000\u0000\u0000<\t\u0001\u0000\u0000\u0000=;\u0001\u0000\u0000"+
-		"\u0000\u0005\r\u001919;";
+		"\u0000\u0000+2\u0001\u0000\u0000\u0000,-\u0005\r\u0000\u0000-.\u0005\f"+
+		"\u0000\u0000.2\u0005\r\u0000\u0000/2\u0005\r\u0000\u000002\u0005\u000e"+
+		"\u0000\u00001#\u0001\u0000\u0000\u00001&\u0001\u0000\u0000\u00001(\u0001"+
+		"\u0000\u0000\u00001,\u0001\u0000\u0000\u00001/\u0001\u0000\u0000\u0000"+
+		"10\u0001\u0000\u0000\u00002;\u0001\u0000\u0000\u000034\n\u0006\u0000\u0000"+
+		"45\u0007\u0000\u0000\u00005:\u0003\b\u0004\u000767\n\u0005\u0000\u0000"+
+		"78\u0007\u0001\u0000\u00008:\u0003\b\u0004\u000693\u0001\u0000\u0000\u0000"+
+		"96\u0001\u0000\u0000\u0000:=\u0001\u0000\u0000\u0000;9\u0001\u0000\u0000"+
+		"\u0000;<\u0001\u0000\u0000\u0000<\t\u0001\u0000\u0000\u0000=;\u0001\u0000"+
+		"\u0000\u0000\u0005\r\u001919;";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

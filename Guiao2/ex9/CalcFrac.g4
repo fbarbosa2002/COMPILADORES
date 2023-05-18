@@ -15,7 +15,7 @@ assignment: expr '->' ID;
 
 expr: 'reduce' expr                 #ExprReduce   
     | 'read' Text                   #ExprRead
-    | expr op=('*' | '/') expr      #ExprMulDiv
+    | expr op=('*' | ':') expr      #ExprMulDiv
     | expr op=('+' | '-') expr      #ExprAddSub
     | '(' expr ')'                  #ExprParent
     | Number '/' Number             #ExprNumbarNum
