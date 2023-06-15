@@ -6,7 +6,7 @@ NMEC n ;
 string name;
 Grade g;
 
-n = integer(read "NMEC: ")*nmec;
+n = integer(read "NMEC: ")*nmec;   # comment
 name = read "Name: ";
 g = real(read "Grade: ")*val;
 # string(val,len): creates a string with len length containing <val> with right alignment
