@@ -9,14 +9,20 @@ public class Interpreter extends StrLangBaseVisitor<String> {
       while(stats.hasNext()){
          String line = visit(stats.next());
          if (line != null){
+            return line;
          }
-         return line;
+         else{
+            break;
+         }
       }
       return null;
    }
 
    @Override public String visitStatPrint(StrLangParser.StatPrintContext ctx) {
       String res = visit(ctx.expr());
+      if (res == null){
+         return null;
+      }
       System.out.println(res);
       return visitChildren(ctx);
       //return res;
@@ -73,6 +79,14 @@ public class Interpreter extends StrLangBaseVisitor<String> {
    }
 
    @Override public String visitExprID(StrLangParser.ExprIDContext ctx) {
-      return variables.get(ctx.ID().getText());
+      String var = ctx.ID().getText();
+
+      if (variables.containsKey(var)){
+         return variables.get(var);
+      }
+      else{
+         System.err.println("ERRO - Variable \"" + var + "\" does not exist");
+         return null;
+      }
    }
 }
